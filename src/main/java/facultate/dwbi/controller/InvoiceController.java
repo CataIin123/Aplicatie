@@ -1,15 +1,17 @@
 package facultate.dwbi.controller;
 
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-@RestController
+@Controller
+@RequestMapping("/")
 public class InvoiceController {
 
-    @RequestMapping("/invoice")
-    public String getInvoices(Model model){
-        model.addAttribute("test", "test from controller");
-        return "invoices.html";
+    @GetMapping("/invoice1")
+    public String getInvoices(){
+        return "invoices";
     }
 }
