@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("/")
+@RequestMapping("/invoices")
 public class InvoiceController {
 
     private final InvoiceRepository invoiceRepository;
@@ -16,7 +16,7 @@ public class InvoiceController {
         this.invoiceRepository = invoiceRepository;
     }
 
-    @GetMapping("/invoices")
+    @GetMapping("/list")
     public String getInvoices(Model model){
         model.addAttribute("invoices", invoiceRepository.findAll());
         return "invoices";

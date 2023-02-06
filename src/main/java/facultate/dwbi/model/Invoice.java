@@ -11,9 +11,9 @@ public class Invoice {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id_invoice;
 
-    @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "id_ride")
-    private Ride ride;
+//    @ManyToOne(cascade = CascadeType.ALL)
+//    @JoinColumn(name = "id_ride")
+//    private Ride ride;
 
     private int id_ride;
     private LocalDate date_invoice;
@@ -23,9 +23,9 @@ public class Invoice {
     public Invoice() {
     }
 
-    public Invoice(int id_invoice, Ride ride, int id_ride, LocalDate date_invoice, float total_amount, String status) {
+    public Invoice(int id_invoice , int id_ride, LocalDate date_invoice, float total_amount, String status) {
         this.id_invoice = id_invoice;
-        this.ride = ride;
+//        this.ride = ride;
         this.id_ride = id_ride;
         this.date_invoice = date_invoice;
         this.total_amount = total_amount;
@@ -72,11 +72,11 @@ public class Invoice {
         this.status = status;
     }
 
-    public Ride getRide() {
-        return ride;
-    }
-
-    public void setRide(Ride ride) {
-        this.ride = ride;
-    }
+//    public Ride getRide() {
+//        return ride;
+//    }
+//
+//    public void setRide(Ride ride) {
+//        this.ride = ride;
+//    }
 }
